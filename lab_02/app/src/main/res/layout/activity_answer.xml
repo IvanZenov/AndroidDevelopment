@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/repeatedQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        style="@style/text"
+        android:text="@string/question"/>
+
+    <EditText
+        android:id="@+id/inputAnswer"
+        android:hint="@string/hintAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:ems="10"
+        android:textSize="25sp"
+        style="@style/text"
+        android:freezesText="true"
+        android:inputType="textPersonName"
+        />
+
+    <Button
+        android:id="@+id/buttonOk"
+        style="@style/text"
+        android:layout_width="210dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:background="#E5F0FF"
+        android:text="OK" />
+</LinearLayout>

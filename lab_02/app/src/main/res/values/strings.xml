@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidLabs</string>
+    <string name="question">How was your day</string>
+    <string name="buttonText">Respond</string>
+    <string name="hintAnswer">Please input here your answer</string>
+
+</resources>

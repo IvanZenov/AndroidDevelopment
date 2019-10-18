@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Лабы по Андроиду</string>
+    <string name="question" >Как прошел твой день?</string>
+    <string name="buttonText" >Ответить</string>
+    <string name="hintAnswer"> Пожалуйста, введите сюда текст</string>
+</resources>
