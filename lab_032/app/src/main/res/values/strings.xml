@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab 3</string>
+    <string name="enter_text">Input question/answer </string>
+    <string name="button_text">OK</string>
+    <string name="land">Land view</string>
+    <string name="exit">Exit</string>
+    <string name="exit_dialog_message">Do you really want to exit?</string>
+    <string name="exit_dialog_ok">Yes</string>
+    <string name="exit_dialog_cancel">No</string>
+</resources>

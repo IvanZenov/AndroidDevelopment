@@ -1,8 +1,9 @@
-package com.example.androidlabs;
+package by.bsu.lab_03;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.annotation.Nullable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,30 +16,31 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button respondButton;
-    EditText inputText;
-    static final int ANSWER_REQUEST = 1;
+    private static  final int ANSWER_REQUEST=1;
     static final String QUESTION_KEY = "question";
+    EditText askQuestion;
+    Button buttonQuestion;
+    TextView answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        respondButton = findViewById(R.id.respondBtn);
-        inputText = findViewById(R.id.inputText);
+        askQuestion = findViewById(R.id.inputText);
+        buttonQuestion = findViewById(R.id.buttonOk);
 
-        respondButton.setOnClickListener(new View.OnClickListener() {
+        buttonQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AnswerActivity.class);
-                intent.putExtra(QUESTION_KEY, inputText.getText().toString());
+                Intent intent = new Intent(MainActivity.this, AnswerActivity.class);
+                intent.putExtra(QUESTION_KEY, askQuestion.getText().toString());
                 startActivityForResult(intent, ANSWER_REQUEST);
             }
         });
-
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == ANSWER_REQUEST) {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     String textOfAnswer = data.getStringExtra("answer");
-                    TextView answer = (TextView)findViewById(R.id.receiveText);
+                    answer = findViewById(R.id.receiveText);
                     answer.setText(textOfAnswer);
                 }
             }
@@ -58,21 +60,21 @@ public class MainActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_options, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.exit:
-                ExitDialog exitDialog = new ExitDialog();
-                exitDialog.show(this.getSupportFragmentManager(), "dialog");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.exit) {
+            ExitDialog exitDialog = new ExitDialog();
+            exitDialog.show(this.getSupportFragmentManager(), "dialog");
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

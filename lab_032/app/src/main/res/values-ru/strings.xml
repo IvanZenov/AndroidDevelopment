@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Лаба 3</string>
+    <string name="enter_text">Введити вопрос/ответ</string>
+    <string name="button_text">ОК</string>
+    <string name="land">Ландш. вид</string>
+    <string name="exit">Выйти</string>
+    <string name="exit_dialog_message">Вы действительно хотите выйти?</string>
+    <string name="exit_dialog_ok">Да</string>
+    <string name="exit_dialog_cancel">Нет</string>
+</resources>
