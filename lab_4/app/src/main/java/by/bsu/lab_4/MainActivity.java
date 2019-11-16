@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputNumber = findViewById(R.id.inputNumber);
-        buttonOk = findViewById(R.id.submitButton);
-        amountOfPrimeNumbers = findViewById(R.id.amountOfPrimeNumbers);
-        listOfPrimeNumbers = findViewById(R.id.listOfPrimeNumbers);
+        this.inputNumber = findViewById(R.id.inputNumber);
+        this.buttonOk = findViewById(R.id.submitButton);
+        this.amountOfPrimeNumbers = findViewById(R.id.amountOfPrimeNumbers);
+        this.listOfPrimeNumbers = findViewById(R.id.listOfPrimeNumbers);
 
         LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, new IntentFilter("MainActivity"));
 
